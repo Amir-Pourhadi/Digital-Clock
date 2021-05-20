@@ -1,23 +1,14 @@
-setInterval(function () {
-	var currentTime = new Date();
-	var hours = currentTime.getHours();
-	var minutes = currentTime.getMinutes();
-	var seconds = currentTime.getSeconds();
-	var period = "AM";
-	if (hours >= 12) {
-		period = "PM";
-	}
-	if (hours > 12) {
-		hours = hours - 12;
-	}
-	if (seconds < 10) {
-		seconds = "0" + seconds;
-	}
-	if (minutes < 10) {
-		minutes = "0" + minutes;
-	}
-	var clockTime = hours + ":" + minutes + ":" + seconds + " " + period;
+setInterval(() => {
+	const currentTime = new Date();
+	let hours = currentTime.getHours();
+	let minutes = currentTime.getMinutes();
+	let seconds = currentTime.getSeconds();
 
-	var clock = document.getElementById("clock");
-	clock.innerText = clockTime;
+	const period = hours >= 12 ? "PM" : "AM";
+	if (hours > 12) hours -= 12;
+	if (minutes < 10) minutes = "0" + minutes;
+	if (seconds < 10) seconds = "0" + seconds;
+
+	const clockTime = `${hours}:${minutes}:${seconds} ${period}`;
+	document.getElementById("clock").innerText = clockTime;
 }, 1000);
