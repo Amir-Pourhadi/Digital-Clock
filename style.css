@@ -13,7 +13,7 @@ body {
   border-top-right-radius: 50px;
   text-align: center;
   text-transform: capitalize;
-  font-family: Helvetica;
+  font-family: Helvetica, serif;
 }
 
 #clock {
@@ -23,6 +23,6 @@ body {
   padding: 0.5em 0;
   width: 80%;
   margin: 0 auto;
-  font-family: Helvetica, Arial;
+  font-family: Helvetica, Arial, sans-serif;
   text-align: center;
 }
